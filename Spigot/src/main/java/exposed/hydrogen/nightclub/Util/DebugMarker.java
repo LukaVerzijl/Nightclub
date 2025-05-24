@@ -1,10 +1,12 @@
-package exposed.hydrogen.nightclub.util;
+package exposed.hydrogen.nightclub.Util;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.ProtocolLibrary;
 import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.wrappers.MinecraftKey;
 import exposed.hydrogen.nightclub.SpigotUtil;
+import exposed.hydrogen.nightclub.util.CrossCompatPlayer;
+import exposed.hydrogen.nightclub.util.Location;
 import exposed.hydrogen.nightclub.wrapper.DebugMarkerWrapper;
 import io.netty.buffer.Unpooled;
 import net.minecraft.core.BlockPosition;

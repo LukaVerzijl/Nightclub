@@ -36,7 +36,7 @@ public class Light implements GameObject, Cloneable {
     @Getter private LightType type;
     @Getter private LightChannel channel;
     @Getter private LightSpeedChannel speedChannel;
-    @Getter private transient DebugMarkerWrapper marker;
+//    @Getter private transient DebugMarkerWrapper marker;
 
     private final transient List<LaserWrapper> lasers = new LinkedList<>();
     private transient GradientEvent currentGradient;
@@ -127,9 +127,9 @@ public class Light implements GameObject, Cloneable {
                                 currentGradient.getEndColor(),
                                 fraction,
                                 currentGradient.getEasing());
-                        marker.setColor(color);
-                        marker.setDuration(DELAY+20);
-                        marker.start(256);
+//                        marker.setColor(color);
+//                        marker.setDuration(DELAY+20);
+//                        marker.start(256);
                     }
                     if(System.currentTimeMillis() > gradientEndMillis) {
                         currentGradient = null;
@@ -199,7 +199,7 @@ public class Light implements GameObject, Cloneable {
         this.multipliedSpeed = data.getPatternData().getSpeed();
         this.secondaryMultipliedSpeed = data.getSecondPatternData().getSpeed();
         this.loc = location.clone();
-        this.marker = Nightclub.getMarkerFactory().build(this.location, new Color(0, 0, 0), "", 500);
+//        this.marker = Nightclub.getMarkerFactory().build(this.location, new Color(0, 0, 0), "", 500);
         isZoomed = false;
         buildLasers();
         isLoaded = true;
@@ -214,10 +214,10 @@ public class Light implements GameObject, Cloneable {
         isLoaded = false;
     }
 
-    public void debug(boolean on) {
-        marker.setName(on ? this.toString() : "");
-        marker.setDuration(on ? 3600000 : 5000);
-    }
+//    public void debug(boolean on) {
+////        marker.setName(on ? this.toString() : "");
+////        marker.setDuration(on ? 3600000 : 5000);
+//    }
 
     /**
      * Starts the movement runnable of this Light. This Light will be completely stationary if it is not started before being turned on.
@@ -289,10 +289,10 @@ public class Light implements GameObject, Cloneable {
         this.duration = duration + 10;
         if(currentGradient == null) {
             this.color = color;
-            marker.setLocation(loc);
-            marker.setColor(this.color);
-            marker.setDuration(this.duration);
-            marker.start(256);
+//            marker.setLocation(loc);
+//            marker.setColor(this.color);
+//            marker.setDuration(this.duration);
+//            marker.start(256);
         }
     }
 
@@ -312,7 +312,7 @@ public class Light implements GameObject, Cloneable {
         if(gradientEvent != null) {
             currentGradient = gradientEvent;
         }
-        marker.stop();
+//        marker.stop();
         lasers.forEach(LaserWrapper::stop);
         isOn = false;
         timeToFade = 0;
@@ -342,10 +342,10 @@ public class Light implements GameObject, Cloneable {
             this.duration = duration + 10;
             if(currentGradient == null) {
                 this.color = color;
-                marker.setLocation(loc);
-                marker.setColor(this.color);
-                marker.setDuration(this.duration);
-                marker.start(256);
+//                marker.setLocation(loc);
+//                marker.setColor(this.color);
+//                marker.setDuration(this.duration);
+//                marker.start(256);
             }
         } else {
             flashOff(color);
@@ -373,10 +373,10 @@ public class Light implements GameObject, Cloneable {
         this.duration = duration + 10;
         if(currentGradient == null) {
             this.color = color;
-            marker.setLocation(loc);
-            marker.setColor(this.color);
-            marker.setDuration(this.duration);
-            marker.start(256);
+//            marker.setLocation(loc);
+//            marker.setColor(this.color);
+//            marker.setDuration(this.duration);
+//            marker.start(256);
         }
         timeToFade = data.getTimeToFadeToBlack();
     }
@@ -388,8 +388,8 @@ public class Light implements GameObject, Cloneable {
     public void ringZoom() {
         if (!isLoaded) return;
         isZoomed = !isZoomed;
-        marker.setLocation(loc);
-        marker.start(256);
+//        marker.setLocation(loc);
+//        marker.start(256);
     }
 
     /**

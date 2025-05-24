@@ -7,7 +7,7 @@ import com.comphenix.protocol.ProtocolManager;
 import dev.hypera.chameleon.core.exceptions.instantiation.ChameleonInstantiationException;
 import dev.hypera.chameleon.platforms.spigot.SpigotChameleon;
 import exposed.hydrogen.nightclub.Laser.LaserTranslator;
-import exposed.hydrogen.nightclub.util.DebugMarker;
+import exposed.hydrogen.nightclub.Util.DebugMarker;
 import exposed.hydrogen.nightclub.wrapper.DebugMarkerFactory;
 import exposed.hydrogen.nightclub.wrapper.LaserFactory;
 import lombok.Getter;
@@ -27,7 +27,7 @@ public class NightclubSpigot extends JavaPlugin {
         util = new SpigotUtil();
         Nightclub.setCrossCompatUtil(util);
         Nightclub.setLaserFactory(new LaserFactory<>(LaserTranslator.class));
-        Nightclub.setMarkerFactory(new DebugMarkerFactory<>(DebugMarker.class));
+//        Nightclub.setMarkerFactory(new DebugMarkerFactory<>(DebugMarker.class));
 
         protocolManager = ProtocolLibrary.getProtocolManager();
 

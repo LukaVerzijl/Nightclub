@@ -99,6 +99,6 @@ public enum LightChannel {
 
     public void debug(boolean on) {
         debugOn = on;
-        lights.forEach(l -> l.debug(on));
+//        lights.forEach(l -> l.debug(on));
     }
 }
